@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/lib/imgui",
+                "${workspaceFolder}/src"
+            ],
+            "defines": ["GL_SILENCE_DEPRECATION"],
+            "compilerPath": "/usr/bin/clang++",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-x64"
+        }
+    ],
+    "version": 4
+}

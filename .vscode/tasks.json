@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "build",
+			"command": "make",
+			"args": [],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": "$gcc",
+			"group": {"build": "build", "isDefault": true},
+			"detail": "Builds the application using the existing Makefile"
+		}
+	]
+}
