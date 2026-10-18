@@ -11,11 +11,12 @@ C++17 / SFML 3 particle-life simulation (macOS), based on the SFMLTemplate layou
 ```sh
 make                  # builds build/debug/play
 make run              # build then run (from repo root; paths like res/config.txt are relative)
-make clean            # remove the binary and .dSYM
+make V=1              # show full compiler commands instead of "Compiling <file>"
+make clean            # remove the binary, .dSYM and src objects
 make distclean        # also remove cached ImGui objects
 ```
 
-- `src/*.cpp` is compiled in one `g++` invocation each build (`-std=c++17 -Wall -O0 -g`). Subdirectories of `src/` are not picked up.
+- Incremental: each `src/*.cpp` compiles to `build/debug/obj/*.o` (`-std=c++17 -Wall -O0 -g`), with `-MMD -MP` `.d` files so header edits rebuild dependents. Subdirectories of `src/` are not picked up.
 - `lib/imgui/*.cpp` (Dear ImGui 1.91.9b + imgui-SFML 3.0, vendored) are compiled once to `build/debug/imgui/*.o` at `-O2` and reused.
 - Links `-lsfml-graphics -lsfml-window -lsfml-system -framework OpenGL`; `-DGL_SILENCE_DEPRECATION` silences macOS OpenGL deprecation warnings.
 - There are no tests or linters.
